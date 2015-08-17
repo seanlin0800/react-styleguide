@@ -7,8 +7,30 @@
  - 一個 module 只宣告一個 React component
  - 原則上使用 JSX 語法，別用 `React.createElement`
 
+## 命名
+ - **附檔名**: 對 React components 使用 `.jsx`
+ - **檔名**: 使用PascalCase ，例如: `ReservationCard.jsx`
+ - **變數命名**: 
+   - React components -> PascalCase
+   - instances -> camelCase 其實就跟一般 local 變數命名一樣
+範例:
+``` javascript
+// bad
+var reservationCard = require('./ReservationCard');
+
+// good
+var ReservationCard = require('./ReservationCard');
+
+// bad
+var ReservationItem = <ReservationCard />;
+
+// good
+var reservationItem = <ReservationCard />;
+```
+
 ## 排版
-如果 props 太多或太長的話，必須拆成多行。範例:
+如果 props 太多或太長的話，必須拆成多行，每個 prop 以及 closing tag 必須獨立一行。
+範例:
 ``` javascript
 // bad
 <Foo superLongParam="bar"
@@ -32,25 +54,14 @@
 </Foo>
 ```
 
-## 命名
- - **附檔名**: 對 React components 使用 `.jsx`
- - **檔名**: 使用PascalCase ，例如: `ReservationCard.jsx`
- - **變數命名**: 
-   - React components -> PascalCase
-   - instances -> camelCase 其實就跟一般 local 變數命名一樣
-範例:
+## Tags
+沒有 chidren 的話必須使用 self-closing tag
 ``` javascript
 // bad
-var reservationCard = require('./ReservationCard');
+<Foo className="stuff"></Foo>
 
 // good
-var ReservationCard = require('./ReservationCard');
-
-// bad
-var ReservationItem = <ReservationCard />;
-
-// good
-var reservationItem = <ReservationCard />;
+<Foo className="stuff" />
 ```
 
 ## Method 順序
