@@ -1,8 +1,35 @@
-# React 風格指南
+# React 風格指南 (ES5)
 
-## Table of Contents
+## 目錄
 
-## Method Organization
+## 基本規則
+ - **JavaScript**: 基本上遵守 [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript/tree/master/es5)
+ - 一個 module 只宣告一個 React component
+ - 原則上使用 JSX 語法，別用 `React.createElement`
+
+## 命名
+ - **附檔名**: 對 React components 使用 `.jsx`
+ - **檔名**: 使用PascalCase ，例如: `ReservationCard.jsx`
+ - **變數命名**: 
+   - React components -> PascalCase
+   - instances -> camelCase 其實就跟一般 local 變數命名一樣
+範例:
+``` javascript
+// bad
+var reservationCard = require('./ReservationCard');
+
+// good
+var ReservationCard = require('./ReservationCard');
+
+// bad
+var ReservationItem = <ReservationCard />;
+
+// good
+var reservationItem = <ReservationCard />;
+```
+
+## Method 順序
+lifecycle methods : 由上而下， 依執行順序排序
   1. displayName
   1. propTypes
   1. contextTypes
@@ -24,6 +51,7 @@
   1. "private" methods, such as _renerXxx() and _getXxx()
   1. render
 
+範例:
 ``` javascript
 React.createClass({
   displayName : '',
@@ -38,10 +66,9 @@ React.createClass({
 });
 ```
 
-## References
+## 參考資料
  - https://github.com/airbnb/javascript/tree/master/react
  - http://reactjsnews.com/react-style-guide-patterns-i-like/
  - http://web-design-weekly.com/2015/01/29/opinionated-guide-react-js-best-practices-conventions/
  - http://aeflash.com/2015-02/react-tips-and-best-practices.html
- - https://github.com/airbnb/javascript/tree/master/react
 
