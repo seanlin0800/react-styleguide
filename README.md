@@ -20,9 +20,23 @@
   1. componentWillUpdate
   1. componentDidUpdate
   1. componentWillUnmount
-  1. event handlers
-  1. "private" methods
+  1. event handlers, such as _handleXxx()
+  1. "private" methods, such as _renerXxx() and _getXxx()
   1. render
+
+``` javascript
+React.createClass({
+  displayName : '',
+  propTypes: {},
+  mixins : [],
+  getInitialState : function() {},
+  componentWillMount : function() {},
+  componentWillUnmount : function() {},
+  _handleChange : function() {},
+  _renderItems : function() {},
+  render : function() {}
+});
+```
 
 ## References
  - https://github.com/airbnb/javascript/tree/master/react
