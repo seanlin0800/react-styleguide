@@ -7,6 +7,31 @@
  - 一個 module 只宣告一個 React component
  - 原則上使用 JSX 語法，別用 `React.createElement`
 
+## 排版
+如果 props 太多或太長的話，必須拆成多行。範例:
+``` javascript
+// bad
+<Foo superLongParam="bar"
+     anotherSuperLongParam="baz" />
+
+// good
+<Foo
+  superLongParam="bar"
+  anotherSuperLongParam="baz"
+/>
+
+// 如果 props 放得下的話，可以在同一行
+<Foo bar="bar" />
+
+// 正常縮排 children
+<Foo
+  superLongParam="bar"
+  anotherSuperLongParam="baz"
+>
+  <Spazz />
+</Foo>
+```
+
 ## 命名
  - **附檔名**: 對 React components 使用 `.jsx`
  - **檔名**: 使用PascalCase ，例如: `ReservationCard.jsx`
