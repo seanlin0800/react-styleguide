@@ -84,6 +84,25 @@ var reservationItem = <ReservationCard />;
 </Foo>
 ```
 
+如果一個含有 JSX tags 的 statement 有多行的話，必須加上小括號:
+``` javascript
+/// bad
+return <MyComponent className="long body" foo="bar">
+         <MyChild />
+       </MyComponent>;
+
+// good
+return (
+  <MyComponent className="long body" foo="bar">
+    <MyChild />
+  </MyComponent>
+);
+
+// good, when single line
+var body = <div>hello</div>;
+return <MyComponent>{body}</MyComponent>;
+```
+
 ## JSX Tags
 沒有 chidren 的話必須使用 self-closing tag
 ``` javascript
@@ -93,6 +112,7 @@ var reservationItem = <ReservationCard />;
 // good
 <Foo className="stuff" />
 ```
+
 self-closing tag 前面必須有**一個**空格
 ``` javascript
 // bad
