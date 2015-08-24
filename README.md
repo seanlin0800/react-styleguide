@@ -59,7 +59,8 @@ var reservationItem = <ReservationCard />;
 ```
 
 ## 排版
-如果 props 太多或太長的話，必須拆成多行，每個 prop 以及 closing tag 必須獨立一行。
+如果 props 太多或太長的話，必須拆成多行，每個 prop 以及 closing tag 必須獨立一行，如此一來不僅可讀性較高， props 變動時也很方便修改。
+
 範例:
 ``` javascript
 // bad
@@ -127,6 +128,36 @@ self-closing tag 前面必須有**一個**空格
 
 // good
 <Foo />
+```
+
+## propTypes
+React components 一定要設定 propTypes。
+
+如此一來確保參數合法性(在 development mode 才會檢查)，也讓使用的人明白如何正確使用該 component。
+
+``` javascript
+// bad
+var Foo = React.createClass({
+
+  render : function() {
+    return <div />;
+  };
+ 
+});
+
+// good
+var Foo = React.createClass({
+
+  propTypes: {
+    optionalArray: React.PropTypes.array,
+    optionalString: React.PropTypes.string
+  },
+
+  render : function() {
+    return <div />;
+  };
+
+});
 ```
 
 ## Method 順序
