@@ -13,6 +13,8 @@
  - **變數命名**: 
    - React components -> PascalCase
    - instances -> camelCase 其實就跟一般 local 變數命名一樣
+   - prop names -> camelCase
+
 範例:
 ``` javascript
 // bad
@@ -26,6 +28,18 @@ var ReservationItem = <ReservationCard />;
 
 // good
 var reservationItem = <ReservationCard />;
+
+// bad
+<Foo
+  UserName="hello"
+  phone_number={12345678}
+/>
+
+// good
+<Foo
+  userName="hello"
+  phoneNumber={12345678}
+/>
 ```
 
 ## 排版
@@ -54,7 +68,7 @@ var reservationItem = <ReservationCard />;
 </Foo>
 ```
 
-## Tags
+## JSX Tags
 沒有 chidren 的話必須使用 self-closing tag
 ``` javascript
 // bad
@@ -62,6 +76,21 @@ var reservationItem = <ReservationCard />;
 
 // good
 <Foo className="stuff" />
+```
+self-closing tag 前面必須有**一個**空格
+``` javascript
+// bad
+<Foo/>
+
+// very bad
+<Foo                 />
+
+// bad
+<Foo
+ />
+
+// good
+<Foo />
 ```
 
 ## Method 順序
