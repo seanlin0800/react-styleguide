@@ -42,6 +42,22 @@ var reservationItem = <ReservationCard />;
 />
 ```
 
+## 引號
+對 JSX attributes 使用雙引號，而其餘字串就如同一般 js 慣例使用單引號
+``` javascript
+// bad
+<Foo className='bar' />
+
+// good
+<Foo className="bar" />
+
+// bad
+<Foo style={{ left: "20px" }} />
+
+// good
+<Foo style={{ left: '20px' }} />
+```
+
 ## 排版
 如果 props 太多或太長的話，必須拆成多行，每個 prop 以及 closing tag 必須獨立一行。
 範例:
