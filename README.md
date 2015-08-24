@@ -104,6 +104,33 @@ var body = <div>hello</div>;
 return <MyComponent>{body}</MyComponent>;
 ```
 
+為了提高程式的可讀性， React.createClass() 傳入的 object 前後須有空白行:
+``` javascript
+// bad
+var Foo = React.createClass({
+  render: function() {
+    return (
+      <div className="bar">
+        <Bar />
+      </div>
+    );
+  }
+});
+
+// good
+var Foo = React.createClass({
+
+  render: function() {
+    return (
+      <div className="bar">
+        <Bar />
+      </div>
+    );
+  }
+
+});
+```
+
 ## JSX Tags
 沒有 chidren 的話必須使用 self-closing tag
 ``` javascript
