@@ -3,7 +3,20 @@
 ## 目錄
 
 ## 基本規則
- - **JavaScript**: 基本上遵守 [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript/tree/master/es5)
+ - **JavaScript**: 基本上遵守 [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript/tree/master/es5)。原則上 Airbnb 的規則和大多數開發者慣用規則是一樣的，需要注意的有:
+   - [不用 Single Var Pattern](https://github.com/airbnb/javascript/tree/master/es5#variables)
+   - anonymous function expressions 左小括號沒有空白，和 [大師 Crockford](http://javascript.crockford.com/code.html) 建議的不同
+``` javascript
+// bad
+var anonymous = function () {
+  return true;
+};
+
+// good
+var anonymous = function() {
+  return true;
+};
+```
  - 一個 module 只宣告一個 React component
  - 原則上使用 JSX 語法，別用 `React.createElement`
 
